@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c17_friday/core/app_colors.dart';
 import 'package:islami_c17_friday/core/styles.dart';
+import 'package:islami_c17_friday/models/sura_model.dart';
 import 'package:islami_c17_friday/screens/home/widgets/sura_item.dart';
+import 'package:islami_c17_friday/screens/sura_details/sura_details.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -459,11 +461,26 @@ class QuranTab extends StatelessWidget {
                 separatorBuilder: (context, index) =>
                     Divider(color: Colors.white, indent: 44, endIndent: 44),
                 padding: EdgeInsets.zero,
-                itemBuilder: (context, index) => SuraItem(
-                  nameAr: surasNameAr[index],
-                  nameEn: surasNameEn[index],
-                  versesCount: versesCount[index],
-                  index: index + 1,
+                itemBuilder: (context, index) => InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      SuraDetailsScreen.routeName,
+
+                      arguments: SuraModel(
+                        nameAr: surasNameAr[index],
+                        index: index,
+                        nameEn: surasNameEn[index],
+                        versesCount: versesCount[index],
+                      ),
+                    );
+                  },
+                  child: SuraItem(
+                    nameAr: surasNameAr[index],
+                    nameEn: surasNameEn[index],
+                    versesCount: versesCount[index],
+                    index: index + 1,
+                  ),
                 ),
                 itemCount: surasNameAr.length,
               ),
