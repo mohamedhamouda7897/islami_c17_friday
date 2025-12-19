@@ -13,4 +13,9 @@ class AppStyles {
     color: AppColors.primary,
     fontWeight: FontWeight.bold,
   );
+  static TextStyle large = TextStyle(
+    fontSize: 16,
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+  );
 }

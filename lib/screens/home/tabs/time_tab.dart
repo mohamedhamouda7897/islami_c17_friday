@@ -9,7 +9,7 @@ class TimeTab extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/more_bg.png"),
-          fit: BoxFit.cover,
+          fit: BoxFit.cover, opacity: .2,
         ),
       ),
     );

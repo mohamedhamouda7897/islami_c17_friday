@@ -9,6 +9,7 @@ class RadioTab extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/radio_bg.png"),
+          opacity: .2,
           fit: BoxFit.cover,
         ),
       ),

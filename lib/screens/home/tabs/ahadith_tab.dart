@@ -10,6 +10,7 @@ class AhadithTab extends StatelessWidget {
         image: DecorationImage(
           image: AssetImage("assets/images/hadith_bg.png"),
           fit: BoxFit.cover,
+          opacity: .2,
         ),
       ),
     );

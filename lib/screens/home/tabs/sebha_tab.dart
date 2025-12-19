@@ -9,7 +9,7 @@ class SebhaTab extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/sebha_bg.png"),
-          fit: BoxFit.cover,
+          fit: BoxFit.cover, opacity: .2,
         ),
       ),
     );
