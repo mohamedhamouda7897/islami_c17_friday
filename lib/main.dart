@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_c17_friday/home.dart';
+import 'package:islami_c17_friday/screens/home/home.dart';
 import 'package:islami_c17_friday/intro_screen.dart';
 
 void main() {

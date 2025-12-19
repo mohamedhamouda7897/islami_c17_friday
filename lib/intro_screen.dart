@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_c17_friday/core/app_colors.dart';
 import 'package:islami_c17_friday/core/styles.dart';
-import 'package:islami_c17_friday/home.dart';
+import 'package:islami_c17_friday/screens/home/home.dart';
 
 class IntroScreen extends StatelessWidget {
   static const String routeName = "intro";
