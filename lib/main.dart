@@ -3,7 +3,12 @@ import 'package:islami_c17_friday/screens/home/home.dart';
 import 'package:islami_c17_friday/intro_screen.dart';
 import 'package:islami_c17_friday/screens/sura_details/sura_details.dart';
 
-void main() {
+import 'core/cache_helper.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await CacheHelper.init();
   runApp(const MyApp());
 }
 
@@ -12,9 +17,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool? value = CacheHelper.getBool("introScreenFlag");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: IntroScreen.routeName,
+      initialRoute: value == true
+          ? HomeScreen.routeName
+          : IntroScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         IntroScreen.routeName: (context) => IntroScreen(),

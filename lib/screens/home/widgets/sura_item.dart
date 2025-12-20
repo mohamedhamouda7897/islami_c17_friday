@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c17_friday/core/styles.dart';
+import 'package:islami_c17_friday/models/sura_model.dart';
 
 class SuraItem extends StatelessWidget {
-  String nameAr;
-  String nameEn;
-  int versesCount;
-  int index;
+  SuraModel model;
 
-  SuraItem({
-    super.key,
-    required this.nameEn,
-    required this.nameAr,
-    required this.index,
-    required this.versesCount,
-  });
+  SuraItem({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -25,24 +17,21 @@ class SuraItem extends StatelessWidget {
           Image.asset("assets/images/img_sur_number_frame.png"),
 
           Text(
-            "$index",
+            "${model.index}",
             style: AppStyles.bodyStyle.copyWith(color: Colors.white),
           ),
         ],
       ),
       title: Text(
-        nameEn,
+        model.nameEn,
         style: AppStyles.bodyStyle.copyWith(color: Colors.white),
       ),
       subtitle: Text(
-        "$versesCount Verses",
-        style: AppStyles.bodyStyle.copyWith(
-          color: Colors.white,
-          fontSize: 14,
-        ),
+        "${model.versesCount} Verses",
+        style: AppStyles.bodyStyle.copyWith(color: Colors.white, fontSize: 14),
       ),
       trailing: Text(
-        nameAr,
+        model.nameAr,
         style: AppStyles.titleStyle.copyWith(color: Colors.white),
       ),
     );
