@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_c17_friday/core/app_colors.dart';
+import 'package:islami_c17_friday/core/cache_helper.dart';
 import 'package:islami_c17_friday/core/styles.dart';
-import 'package:islami_c17_friday/home.dart';
+import 'package:islami_c17_friday/screens/home/home.dart';
 
 class IntroScreen extends StatelessWidget {
   static const String routeName = "intro";
@@ -64,7 +65,9 @@ class IntroScreen extends StatelessWidget {
       showNextButton: true,
       bodyPadding: EdgeInsets.only(top: 266),
       showSkipButton: true,
-      onSkip: () {
+      onSkip: () async {
+        await CacheHelper.saveBool("introScreenFlag", true);
+
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       skip: Text("Skip", style: AppStyles.bodyStyle),
@@ -89,7 +92,8 @@ class IntroScreen extends StatelessWidget {
       globalHeader: Image.asset("assets/images/islami_top.png"),
       next: Text("Next", style: AppStyles.bodyStyle),
       done: Text("Done", style: AppStyles.bodyStyle),
-      onDone: () {
+      onDone: () async {
+        await CacheHelper.saveBool("introScreenFlag", true);
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
     );
